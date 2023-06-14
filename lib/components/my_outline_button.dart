@@ -4,14 +4,14 @@ import '../constants.dart';
 
 class MyOutlineButton extends StatelessWidget {
   const MyOutlineButton({
-    Key key,
-    this.imageSrc,
-    this.text,
-    this.press,
+    Key? key,
+    required this.imageSrc,
+    required this.text,
+    required this.press,
   }) : super(key: key);
 
   final String imageSrc, text;
-  final Function press;
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +30,12 @@ class MyOutlineButton extends StatelessWidget {
         onPressed: press,
         child: Row(
           children: [
-          Image.asset(
-            imageSrc,
-            height: 40,
-          ),
-          SizedBox(width: kDefaultPadding),
-          Text(text)
+            Image.asset(
+              imageSrc,
+              height: 40,
+            ),
+            SizedBox(width: kDefaultPadding),
+            Text(text)
           ],
         ),
       ),
